@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+    <div id="box"> </div>
+    <input id="text" type="text"></input>
+    <script type="text/babel">
+        /**
+         * 虚拟DOM
+         */
+        // let el = React.createElement('header', {id: 'title'},
+        //             React.createElement('h1', null, 'hello'),
+        //             React.createElement('p', null, 'raect'),
+        //         )
+        // ReactDOM.render(el, document.getElementById('root'));
+
+        /**
+         * JSX
+        */
+    //    ReactDOM.render(
+    //        <header>哈尔雷克</header>,
+    //        document.getElementById('root')
+    //    )
+
+    /**
+     * 插值
+     */
+    let text = document.querySelector('#text')
+    text .oninput = () => {
+        ReactDOM.render(
+            <div>
+                {text.value}
+            </div>,
+            document.querySelector('#box')
+        )
+    }
+    </script>
+</body>
+</html>
